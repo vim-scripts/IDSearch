@@ -1,0 +1,12 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=3630
+
+This is a plugin to use id-utils (http://www.gnu.org/software/idutils/) gid command for quickly finding in files. This plugin searches for a given word and lists the results in a small window. As you move over the results, each file is shown in the preview window. 
+
+Now on Github: https://github.com/milkbikis/IDSearch.vim
+
+To edit the previewed file in the same window, press Enter (<CR>). To go back to the original file, press H.
+To open it in a new tab, press t.
+To open silently in a new tab, press T.
+
+Note:
+This is my first attempt at writing a vim script. I used NERDTree's source to learn how to do certain things. It's a fantastic plugin for file exploration and more.
