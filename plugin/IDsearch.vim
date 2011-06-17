@@ -30,7 +30,7 @@
 "
 function! s:setGlobalDefault(var, value)
 	if !exists(a:var)
-		silent! exec 'let ' . a:var . ' = ' . "'" . a:value . "'"
+		exec 'let ' . a:var . ' = ' . "'" . a:value . "'"
 		return 1
 	endif
 	return 0
@@ -51,7 +51,7 @@ function! s:initIDSearch()
 
 		"Set global defaults if not already set
 		call s:setGlobalDefault('g:IDSearch_search_window_height', 5)
-		call s:setGlobalDefault('g:IDSearch_KEY_show_original', 'H')
+		call s:setGlobalDefault('g:IDSearch_KEY_show_original', 'h')
 
 		let s:IDSearchInited = 1
 	endif
@@ -196,7 +196,7 @@ function! s:setMappings()
 	noremap <silent> <buffer> T :call <SID>openFileInTab(1)<CR>
 
 	"Close results window and go to original file when H is pressed
-	noremap <silent> g:IDSearch_KEY_show_original :call <SID>showOriginalFile()<CR>
+	silent! exec 'noremap <silent> ' . g:IDSearch_KEY_show_original .' :call <SID>showOriginalFile()<CR>'
 
 	"Close results window when x is pressed
 	noremap <silent> <buffer> x :close<CR>:pclose<CR>
